@@ -11,11 +11,14 @@ import pairmatching.common.AnswerType;
 import pairmatching.common.MainCategory;
 
 public class InputView {
+
 	private static final int MATCHING_INFO_NUMBER_OF_TYPES = 3;
 	private static final String COMMA = ",";
 	private static final String ERROR = "[ERROR] ";
 	private static final String ERROR_INVALID_OPTION = ERROR + "존재하지 않는 명령입니다.";
 	private static final String ERROR_INVALID_NUMBER_OF_TYPES = ERROR + "과정, 레벨, 미션 단위로 입력해야 합니다.";
+	private static final String SELECT_MATCHING_INFO_REQUEST = "과정, 레벨, 미션을 선택하세요.\n"
+		+ "ex) 백엔드, 레벨1, 자동차경주";
 
 	public String selectMainCategory(List<MainCategory> mainCategoryList) {
 		List<String> mainCategoryMethods = mainCategoryList.stream()
@@ -29,6 +32,7 @@ public class InputView {
 	}
 
 	public List<String> enterMatchingInfo() {
+		System.out.println(SELECT_MATCHING_INFO_REQUEST);
 		List<String> info = Splitter.on(COMMA)
 			.trimResults()
 			.omitEmptyStrings()
