@@ -27,8 +27,9 @@ public class PairMatching {
 			try {
 				String option = askOptionChoice();
 				if (option.equals(MATCH)) {
-					matchingController.run();
+					matchingController.match();
 				}
+				break;
 			} catch (IllegalArgumentException e) {
 				outputView.printError(e.getMessage());
 			}
