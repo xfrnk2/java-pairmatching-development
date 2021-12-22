@@ -7,6 +7,7 @@ import pairmatching.common.Course;
 import pairmatching.common.Level;
 import pairmatching.common.MainCategory;
 import pairmatching.common.Mission;
+import pairmatching.domain.Pair;
 
 public class OutputView {
 	private static final String SELECT_MAIN_OPTION = "기능을 선택하세요.";
@@ -17,6 +18,7 @@ public class OutputView {
 	private static final String ITEM_FORMAT = "   - ";
 	private static final String SEMICOLON = ":";
 	private static final String BLANK = " ";
+	private static final String MATCHING_LIST = "페어 매칭 결과입니다.";
 
 	public void printError(String error) {
 		System.out.println(error);
@@ -62,5 +64,12 @@ public class OutputView {
 			}
 		}
 		System.out.println(String.join(ITEM_DELIMITER, missions));
+	}
+
+	public void printMatchingResult(List<Pair> pairList) {
+		System.out.println(MATCHING_LIST);
+		for (Pair pair : pairList) {
+			System.out.println(pair);
+		}
 	}
 }
