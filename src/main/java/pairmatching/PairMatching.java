@@ -22,14 +22,13 @@ public class PairMatching {
 
 
 	public void run() {
-		outputView.printMenus();
 		while (true) {
 			try {
+				outputView.printMenus();
 				String option = askOptionChoice();
 				if (option.equals(MATCH)) {
 					matchingController.match();
 				}
-				break;
 			} catch (IllegalArgumentException e) {
 				outputView.printError(e.getMessage());
 			}
