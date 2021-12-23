@@ -57,7 +57,7 @@ public class MatchingController {
 	   if (option.equals(YES)) {
 		   Pairs pairs = createPairs(crewNameList);
 		   outputView.printMatchingResult(pairs.findAll());
-		   matchingRecords.add(matchingInfo, pairs);
+		   matchingRecords.modifyRecord(matchingInfo, pairs);
 	   } else if (option.equals(NO)) {
 		   match();
 	   }
