@@ -16,6 +16,7 @@ public class MatchingRecords {
 	}
 
 	public boolean checkDuplication(Matching matching) {
+		System.out.println(matchingRecords.containsKey(matching));
 		return matchingRecords.containsKey(matching);
 	}
 

@@ -1,6 +1,7 @@
 package pairmatching.domain;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 import pairmatching.common.Course;
 import pairmatching.common.Level;
@@ -56,4 +57,21 @@ public class Matching {
 		return Arrays.stream(Mission.values()).map(Mission::getMission).anyMatch(mission::equals);
 	}
 
+	@Override
+	public boolean equals(Object object) {
+		if (this == object) {
+			return true;
+		}
+		if (this.getClass() != object.getClass()) {
+			return false;
+		}
+		Matching matching = (Matching)object;
+		return course.equals(matching.getCourse()) && level.equals(matching.getLevel()) && mission.equals(
+			matching.getMission());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(course, level);
+	}
 }

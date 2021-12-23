@@ -41,6 +41,10 @@ public class MatchingController {
 		try {
 			Matching matchingInfo = initializeMatchingInfo();
 			List<String> crewNameList = getRandomCrewNameListByCourse(matchingInfo.getCourse());
+			final boolean hasRecord = matchingRecords.checkDuplication(matchingInfo);
+			if (hasRecord) {
+			   rematch(matchingInfo, crewNameList);
+		}
 			Pairs pairs = createPairs(crewNameList);
 			outputView.printMatchingResult(pairs.findAll());
 			matchingRecords.add(matchingInfo, pairs);
@@ -48,6 +52,30 @@ public class MatchingController {
 			outputView.printError(e.getMessage());
 		}
 
+	}
+
+	// }
+
+
+	private void rematch (Matching matchingInfo, List<String> crewNameList) {
+	   String option = askRematchChoice();
+	   if (option.equals(YES)) {
+		   Pairs pairs = createPairs(crewNameList);
+		   outputView.printMatchingResult(pairs.findAll());
+		   matchingRecords.add(matchingInfo, pairs);
+	   } else if (option.equals(NO)) {
+		   match();
+	   }
+	}
+
+	private String askRematchChoice() {
+		try {
+			outputView.printSelectRematchOptionRequest();
+			return inputView.selectRematch();
+		} catch (IllegalArgumentException e) {
+			outputView.printError(e.getMessage());
+			return askRematchChoice();
+		}
 	}
 
 	private Pairs createPairs(List<String> crewNameList) {

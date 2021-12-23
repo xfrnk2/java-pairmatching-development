@@ -3,6 +3,7 @@ package pairmatching.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import pairmatching.common.AnswerType;
 import pairmatching.common.Course;
 import pairmatching.common.Level;
 import pairmatching.common.MainCategory;
@@ -19,6 +20,8 @@ public class OutputView {
 	private static final String SEMICOLON = ":";
 	private static final String BLANK = " ";
 	private static final String MATCHING_LIST = "페어 매칭 결과입니다.";
+	private static final String SELECT_REMATCH_OPTION = "매칭 정보가 있습니다. 다시 매칭하시겠습니까?\n"
+		+ AnswerType.YES.getAnswer() + ITEM_DELIMITER + AnswerType.NO.getAnswer();
 
 	public void printError(String error) {
 		System.out.println(error);
@@ -71,5 +74,9 @@ public class OutputView {
 		for (Pair pair : pairList) {
 			System.out.println(pair);
 		}
+	}
+
+	public void printSelectRematchOptionRequest() {
+		System.out.println(SELECT_REMATCH_OPTION);
 	}
 }
