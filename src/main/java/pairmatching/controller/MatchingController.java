@@ -36,6 +36,18 @@ public class MatchingController {
 		this.frontendNameList = crewnameReader.initializeCrewNameList(Course.FRONTEND.getPath());
 	}
 
+	public void retrieve () {
+		outputView.printCoursesAndMissions();
+		try {
+			Matching matchingInfo = initializeMatchingInfo();
+			Pairs pairs = matchingRecords.findByMatchingInfo(matchingInfo);
+			outputView.printMatchingResult(pairs.findAll());
+		} catch (IllegalArgumentException e) {
+			outputView.printError(e.getMessage());
+			retrieve();
+		}
+	}
+
 	public void match() {
 		outputView.printCoursesAndMissions();
 		try {

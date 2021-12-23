@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MatchingRecords {
+	private static final String ERROR = "[ERROR] ";
+	private static final String ERROR_NOT_EXISTENT_MATCHING = ERROR + "존재하지 않는 기록입니다.";
+
 	private Map<Matching, Pairs> matchingRecords = new HashMap<>();
 
 	public void add(final Matching matching, final Pairs pairs) {
@@ -13,6 +16,13 @@ public class MatchingRecords {
 
 	public Map<Matching, Pairs> findAll() {
 		return Collections.unmodifiableMap(matchingRecords);
+	}
+
+	public Pairs findByMatchingInfo (Matching matchingInfo) {
+		if (!matchingRecords.containsKey(matchingInfo)) {
+			throw new IllegalArgumentException(ERROR_NOT_EXISTENT_MATCHING);
+		}
+		return matchingRecords.get(matchingInfo);
 	}
 
 	public boolean hasRecord(Matching matching) {

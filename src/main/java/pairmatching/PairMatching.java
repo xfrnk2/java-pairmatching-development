@@ -19,6 +19,7 @@ public class PairMatching {
 	private static final MatchingController matchingController = new MatchingController(inputView, outputView, crewnameReader);
 
 	private static final String MATCH = "1";
+	private static final String RETRIEVE = "2";
 
 
 	public void run() {
@@ -28,6 +29,8 @@ public class PairMatching {
 				String option = askOptionChoice();
 				if (option.equals(MATCH)) {
 					matchingController.match();
+				} else if (option.equals(RETRIEVE)) {
+					matchingController.retrieve();
 				}
 			} catch (IllegalArgumentException e) {
 				outputView.printError(e.getMessage());
