@@ -15,7 +15,7 @@ public class MatchingRecords {
 		return Collections.unmodifiableMap(matchingRecords);
 	}
 
-	public boolean checkDuplication(Matching matching) {
+	public boolean hasRecord(Matching matching) {
 		System.out.println(matchingRecords.containsKey(matching));
 		return matchingRecords.containsKey(matching);
 	}

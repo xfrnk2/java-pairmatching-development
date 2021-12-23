@@ -41,8 +41,7 @@ public class MatchingController {
 		try {
 			Matching matchingInfo = initializeMatchingInfo();
 			List<String> crewNameList = getRandomCrewNameListByCourse(matchingInfo.getCourse());
-			final boolean hasRecord = matchingRecords.checkDuplication(matchingInfo);
-			if (hasRecord) {
+			if (matchingRecords.hasRecord(matchingInfo)) {
 			   rematch(matchingInfo, crewNameList);
 		}
 			Pairs pairs = createPairs(crewNameList);
@@ -51,11 +50,7 @@ public class MatchingController {
 		} catch (IllegalArgumentException e) {
 			outputView.printError(e.getMessage());
 		}
-
 	}
-
-	// }
-
 
 	private void rematch (Matching matchingInfo, List<String> crewNameList) {
 	   String option = askRematchChoice();
