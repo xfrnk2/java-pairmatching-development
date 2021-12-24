@@ -21,6 +21,7 @@ public class PairMatching {
 	private static final String MATCH = "1";
 	private static final String RETRIEVE = "2";
 	private static final String RESET = "3";
+	private static final String EXIT = "Q";
 
 
 	public void run() {
@@ -34,6 +35,8 @@ public class PairMatching {
 					matchingController.retrieve();
 				} else if (option.equals(RESET)) {
 					matchingController.resetRecords();
+				} else if (option.equals(EXIT)) {
+					break;
 				}
 			} catch (IllegalArgumentException e) {
 				outputView.printError(e.getMessage());
