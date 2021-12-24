@@ -18,24 +18,18 @@ public class PairMatching {
 	private static final CrewNameReader crewnameReader = new CrewNameReader();
 	private static final MatchingController matchingController = new MatchingController(inputView, outputView, crewnameReader);
 
-	private static final String MATCH = "1";
-	private static final String RETRIEVE = "2";
-	private static final String RESET = "3";
-	private static final String EXIT = "Q";
-
-
 	public void run() {
 		while (true) {
 			try {
 				outputView.printMenus();
 				String option = askOptionChoice();
-				if (option.equals(MATCH)) {
+				if (option.equals(MainCategory.MATCH.getCategory())) {
 					matchingController.match();
-				} else if (option.equals(RETRIEVE)) {
+				} else if (option.equals(MainCategory.RETRIEVE.getCategory())) {
 					matchingController.retrieve();
-				} else if (option.equals(RESET)) {
+				} else if (option.equals(MainCategory.RESET.getCategory())) {
 					matchingController.resetRecords();
-				} else if (option.equals(EXIT)) {
+				} else if (option.equals(MainCategory.EXIT.getCategory())) {
 					break;
 				}
 			} catch (IllegalArgumentException e) {
