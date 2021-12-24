@@ -21,20 +21,26 @@ public class PairMatching {
 			try {
 				outputView.printMenus();
 				String option = askOptionChoice();
-				if (option.equals(MainCategory.MATCH.getCategory())) {
-					matchingController.match();
-				} else if (option.equals(MainCategory.RETRIEVE.getCategory())) {
-					matchingController.retrieve();
-				} else if (option.equals(MainCategory.RESET.getCategory())) {
-					matchingController.resetRecords();
-				} else if (option.equals(MainCategory.EXIT.getCategory())) {
+				if (option.equals(MainCategory.EXIT.getCategory())) {
 					break;
 				}
+				performOption(option);
 			} catch (IllegalArgumentException e) {
 				outputView.printError(e.getMessage());
 			}
 		}
 	}
+
+	private void performOption(String option) {
+		if (option.equals(MainCategory.MATCH.getCategory())) {
+			matchingController.match();
+		} else if (option.equals(MainCategory.RETRIEVE.getCategory())) {
+			matchingController.retrieve();
+		} else if (option.equals(MainCategory.RESET.getCategory())) {
+			matchingController.resetRecords();
+		}
+	}
+
 
 	private String askOptionChoice() {
 		List<MainCategory> mainCategoryList = Arrays.stream(MainCategory.values()).collect(Collectors.toList());
