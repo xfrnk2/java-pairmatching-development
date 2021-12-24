@@ -1,11 +1,9 @@
 package pairmatching;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import pairmatching.common.Course;
 import pairmatching.common.MainCategory;
 import pairmatching.controller.MatchingController;
 import pairmatching.util.CrewNameReader;

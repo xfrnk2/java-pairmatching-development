@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import pairmatching.common.Course;
-
 public class CrewNameReader {
 	private static final String ERROR = "[ERROR] ";
 	private static final String ERROR_INVALID_LOCATION = ERROR +
