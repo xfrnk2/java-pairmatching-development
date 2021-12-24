@@ -20,6 +20,7 @@ public class OutputView {
 	private static final String SEMICOLON = ":";
 	private static final String BLANK = " ";
 	private static final String MATCHING_LIST = "페어 매칭 결과입니다.";
+	private static final String RESET_COMPLETED = "초기화 되었습니다.";
 	private static final String SELECT_REMATCH_OPTION = "매칭 정보가 있습니다. 다시 매칭하시겠습니까?\n"
 		+ AnswerType.YES.getAnswer() + ITEM_DELIMITER + AnswerType.NO.getAnswer();
 
@@ -78,5 +79,9 @@ public class OutputView {
 
 	public void printSelectRematchOptionRequest() {
 		System.out.println(SELECT_REMATCH_OPTION);
+	}
+
+	public void printResetCompletedMessage () {
+		System.out.println(RESET_COMPLETED);
 	}
 }

@@ -33,4 +33,8 @@ public class MatchingRecords {
 	public void modifyRecord(Matching matching, Pairs pairs) {
 		matchingRecords.put(matching, pairs);
 	}
+
+	public void reset() {
+		matchingRecords = new HashMap<>();
+	}
 }

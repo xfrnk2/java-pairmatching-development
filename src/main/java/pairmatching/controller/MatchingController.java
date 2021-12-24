@@ -36,6 +36,11 @@ public class MatchingController {
 		this.frontendNameList = crewnameReader.initializeCrewNameList(Course.FRONTEND.getPath());
 	}
 
+	public void resetRecords () {
+		matchingRecords.reset();
+		outputView.printResetCompletedMessage();
+	}
+
 	public void retrieve () {
 		outputView.printCoursesAndMissions();
 		try {
