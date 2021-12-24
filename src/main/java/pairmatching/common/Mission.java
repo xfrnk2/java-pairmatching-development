@@ -10,8 +10,8 @@ public enum Mission {
 	PERFORMANCE_IMPROVEMENT("성능개선", "레벨4"),
 	DISTRIBUTION("배포", "레벨4");
 
-	private String mission;
-	private String level;
+	private final String mission;
+	private final String level;
 
 	Mission(String category, String description) {
 		this.mission = category;

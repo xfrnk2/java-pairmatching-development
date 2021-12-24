@@ -11,11 +11,11 @@ public class CrewNameReader {
 	private static final String ERROR_INVALID_LOCATION = ERROR +
 		"크루 명단 파일의 경로가 잘못되었습니다.";
 
-	public List<String> initializeCrewNameList(String path) {
+	public List<String> initializeCrewNameList(final String path) {
 		return getCrewNamesByPath(path);
 	}
 
-	private List<String> getCrewNamesByPath(String path) {
+	private List<String> getCrewNamesByPath(final String path) {
 		try {
 			return CrewNameReader.readFileByLine(path);
 		} catch (IOException e) {
@@ -23,7 +23,7 @@ public class CrewNameReader {
 		}
 	}
 
-	private static List<String> readFileByLine(String path) throws IOException {
+	private static List<String> readFileByLine(final String path) throws IOException {
 		List<String> textList = new ArrayList<>();
 		BufferedReader br = new BufferedReader(new FileReader(path));
 		while (true) {

@@ -69,7 +69,7 @@ public class MatchingController {
 		}
 	}
 
-	private void rematch (Matching matchingInfo, List<String> crewNameList) {
+	private void rematch (final Matching matchingInfo, final List<String> crewNameList) {
 	   String option = askRematchChoice();
 	   if (option.equals(YES)) {
 		   Pairs pairs = createPairs(crewNameList);
@@ -90,14 +90,14 @@ public class MatchingController {
 		}
 	}
 
-	private Pairs createPairs(List<String> crewNameList) {
+	private Pairs createPairs(final List<String> crewNameList) {
 		if (isDivisibleByTwo(crewNameList.size())) {
 			return createEvenPairs(crewNameList);
 		}
 		return createOddPairs(crewNameList);
 	}
 
-	private Pairs createOddPairs(List<String> crewNameList) {
+	private Pairs createOddPairs(final List<String> crewNameList) {
 		Pairs pairs = new Pairs();
 		for (int i = 0; i < crewNameList.size() - 1; i += 2) {
 			List<String> tempNameList = new ArrayList<>();
@@ -112,7 +112,7 @@ public class MatchingController {
 		return pairs;
 	}
 
-	private Pairs createEvenPairs(List<String> crewNameList) {
+	private Pairs createEvenPairs(final List<String> crewNameList) {
 		Pairs pairs = new Pairs();
 		for (int i = 0; i < crewNameList.size() - 1; i += 2) {
 			List<String> tempNameList = new ArrayList<>();
@@ -134,7 +134,7 @@ public class MatchingController {
 			info.get(MATCHING_INFO_MISSION_INDEX));
 	}
 
-	private List<String> getRandomCrewNameListByCourse(String course) {
+	private List<String> getRandomCrewNameListByCourse(final String course) {
 		if (course.equals(Course.BACKEND.getCourse())) {
 			return Randoms.shuffle(backendNameList);
 		} else if (course.equals(Course.FRONTEND.getCourse())) {

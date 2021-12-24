@@ -14,19 +14,19 @@ public class MatchingRecords {
 		matchingRecords.put(matching, pairs);
 	}
 
-	public Pairs findByMatchingInfo (Matching matchingInfo) {
+	public Pairs findByMatchingInfo (final Matching matchingInfo) {
 		if (!matchingRecords.containsKey(matchingInfo)) {
 			throw new IllegalArgumentException(ERROR_NOT_EXISTENT_MATCHING);
 		}
 		return matchingRecords.get(matchingInfo);
 	}
 
-	public boolean hasRecord(Matching matching) {
+	public boolean hasRecord(final Matching matching) {
 		System.out.println(matchingRecords.containsKey(matching));
 		return matchingRecords.containsKey(matching);
 	}
 
-	public void modifyRecord(Matching matching, Pairs pairs) {
+	public void modifyRecord(final Matching matching, final Pairs pairs) {
 		matchingRecords.put(matching, pairs);
 	}
 

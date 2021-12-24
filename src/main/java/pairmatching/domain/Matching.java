@@ -35,7 +35,7 @@ public class Matching {
 		return mission;
 	}
 
-	private void validate(String course, String level, String mission) {
+	private void validate(final String course, final String level, final String mission) {
 		if (!isValidCourse(course)) {
 			throw new IllegalArgumentException(ERROR_NOT_EXISTENT_COURSE);
 		} else if (!isValidLevel(level)) {
@@ -45,20 +45,20 @@ public class Matching {
 		}
 	}
 
-	private boolean isValidCourse(String course) {
+	private boolean isValidCourse(final String course) {
 		return Arrays.stream(Course.values()).map(Course::getCourse).anyMatch(course::equals);
 	}
 
-	private boolean isValidLevel(String level) {
+	private boolean isValidLevel(final String level) {
 		return Arrays.stream(Level.values()).map(Level::getLevel).anyMatch(level::equals);
 	}
 
-	private boolean isValidMission(String mission) {
+	private boolean isValidMission(final String mission) {
 		return Arrays.stream(Mission.values()).map(Mission::getMission).anyMatch(mission::equals);
 	}
 
 	@Override
-	public boolean equals(Object object) {
+	public boolean equals(final Object object) {
 		if (this == object) {
 			return true;
 		}

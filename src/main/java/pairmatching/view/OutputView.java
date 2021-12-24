@@ -26,7 +26,7 @@ public class OutputView {
 	private static final String SELECT_REMATCH_OPTION = "매칭 정보가 있습니다. 다시 매칭하시겠습니까?\n"
 		+ AnswerType.YES.getAnswer() + ITEM_DELIMITER + AnswerType.NO.getAnswer();
 
-	public void printError(String error) {
+	public void printError(final String error) {
 		System.out.println(error);
 	}
 

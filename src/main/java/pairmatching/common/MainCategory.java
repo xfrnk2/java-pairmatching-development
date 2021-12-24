@@ -6,8 +6,8 @@ public enum MainCategory {
 	RESET("3", "페어 초기화"),
 	EXIT("Q", "종료");
 
-	private String category;
-	private String description;
+	private final String category;
+	private final String description;
 
 	MainCategory(String category, String description) {
 		this.category = category;

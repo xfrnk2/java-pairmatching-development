@@ -31,7 +31,7 @@ public class PairMatching {
 		}
 	}
 
-	private void performOption(String option) {
+	private void performOption(final String option) {
 		if (option.equals(MainCategory.MATCH.getCategory())) {
 			matchingController.match();
 		} else if (option.equals(MainCategory.RETRIEVE.getCategory())) {
