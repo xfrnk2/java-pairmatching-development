@@ -21,7 +21,6 @@ public class MatchingController {
 	private static final String NO = "아니오";
 	private static final String ERROR = "[ERROR] ";
 	private static final String ERROR_INVALID_COURSE_NAME = ERROR + "존재하지 않는 과정명입니다.";
-	private static final CrewNameReader crewNameReader = new CrewNameReader();
 	private static final MatchingRecords matchingRecords = new MatchingRecords();
 	private final InputView inputView;
 	private final OutputView outputView;
