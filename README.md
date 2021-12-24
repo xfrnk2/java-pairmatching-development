@@ -1,6 +1,6 @@
 # 소개 
-페어 매칭을 구현하고 완성하기 위한 저장소  
-지난 프리코스 최종 테스트 문제였던 "페어매칭"을 완전히 구현하는 것을 목표로한다.
+- **페어 매칭을 구현하고 완성하기 위한 저장소**  
+- 지난 프리코스 최종 테스트 문제였던 "페어매칭"을 완전히 구현하는 것을 목표로한다.
 
 ---
 
@@ -56,6 +56,49 @@
 #### 종료 - 기능 목록에서 "Q"입력시
 - [x] 프로그램을 종료하는 기능
 
+# 최종 디렉토리 구조
+```
+└─java-pairmatching-development
+    └─src
+        ├─main
+        │  ├─java
+        │  │  └─pairmatching
+        │  │      │  Application.java
+        │  │      │  PairMatching.java
+        │  │      │
+        │  │      ├─common
+        │  │      │      AnswerType.java
+        │  │      │      Course.java
+        │  │      │      Level.java
+        │  │      │      MainCategory.java
+        │  │      │      Mission.java
+        │  │      │
+        │  │      ├─controller
+        │  │      │      MatchingController.java
+        │  │      │
+        │  │      ├─domain
+        │  │      │      Matching.java
+        │  │      │      MatchingRecords.java
+        │  │      │      Pair.java
+        │  │      │      Pairs.java
+        │  │      │
+        │  │      ├─util
+        │  │      │      CrewNameReader.java
+        │  │      │
+        │  │      └─view
+        │  │              InputView.java
+        │  │              OutputView.java
+        │  │
+        │  └─resources
+        │          backend-crew.md
+        │          frontend-crew.md
+        │
+        └─test
+            └─java
+                └─pairmatching
+                        ApplicationTest.java
+```
+
 
 
 ## ✔️ Requirement
@@ -66,7 +109,7 @@
 ## ✔️ Initialize
 
 ```bash
-$ git clone https://github.com/xfrnk2/java-racingcar-precourse.git
+$ git clone https://github.com/xfrnk2/java-pairmatching-development.git
 ```
 
 ## ✔️ Test
@@ -83,6 +126,7 @@ $ ./gradlew clean test
 $ gradlew.bat clean test
 ```
 
+--- 
 # 미션 - 페어매칭관리 애플리케이션
 
 ## 🔍 진행방식
