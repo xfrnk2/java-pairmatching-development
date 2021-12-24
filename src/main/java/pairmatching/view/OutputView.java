@@ -18,6 +18,8 @@ public class OutputView {
 	private static final String ITEM_DELIMITER = " | ";
 	private static final String ITEM_FORMAT = "   - ";
 	private static final String SEMICOLON = ":";
+	private static final String MISSION = "미션: ";
+	private static final String COURSE = "과정: ";
 	private static final String BLANK = " ";
 	private static final String MATCHING_LIST = "페어 매칭 결과입니다.";
 	private static final String RESET_COMPLETED = "초기화 되었습니다.";
@@ -38,13 +40,13 @@ public class OutputView {
 	public void printCoursesAndMissions() {
 		System.out.println(OUTLINE_START);
 		printCourses();
-		System.out.println("미션: ");
+		System.out.println(MISSION);
 		printLevels();
 		System.out.println(OUTLINE_END);
 	}
 
 	private void printCourses() {
-		System.out.print("과정: ");
+		System.out.print(COURSE);
 		List<String> courses = new ArrayList<>();
 		for (Course course : Course.values()) {
 			courses.add(course.getCourse());
