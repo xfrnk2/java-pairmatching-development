@@ -1,9 +1,11 @@
+# 페어 매칭 프로그램
+![Code: Java](https://img.shields.io/badge/code-java-orange)
+
 # 소개 
-- **페어 매칭을 구현하고 완성하기 위한 저장소**  
+- **페어 매칭을 구현하고 완성하기 위한 저장소**  [프리코스 회고 바로가기](https://xfrnk2.github.io/review/211218_%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4_%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4%ED%9B%84%EA%B8%B0/)
 - 지난 프리코스 최종 테스트 문제였던 "페어매칭"을 완전히 구현하는 것을 목표로한다.
 
 ---
-
 # 구현할 기능 목록
 
 - [x] 시작시, 기능의 종류 목록을 출력하는 기능
