@@ -83,7 +83,7 @@ public class OutputView {
 		System.out.println(SELECT_REMATCH_OPTION);
 	}
 
-	public void printResetCompletedMessage () {
+	public void printResetCompletedMessage() {
 		System.out.println(RESET_COMPLETED);
 	}
 }

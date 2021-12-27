@@ -8,8 +8,8 @@ import java.util.List;
 
 public class CrewNameReader {
 	private static final String ERROR = "[ERROR] ";
-	private static final String ERROR_INVALID_LOCATION = ERROR +
-		"크루 명단 파일의 경로가 잘못되었습니다.";
+	private static final String ERROR_INVALID_LOCATION = ERROR
+		+ "크루 명단 파일의 경로가 잘못되었습니다.";
 
 	public List<String> initializeCrewNameList(final String path) {
 		return getCrewNamesByPath(path);
@@ -28,8 +28,9 @@ public class CrewNameReader {
 		BufferedReader br = new BufferedReader(new FileReader(path));
 		while (true) {
 			String line = br.readLine();
-			if (line == null)
+			if (line == null) {
 				break;
+			}
 			textList.add(line);
 		}
 		br.close();

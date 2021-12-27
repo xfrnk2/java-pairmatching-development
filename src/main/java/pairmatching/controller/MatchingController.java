@@ -35,12 +35,12 @@ public class MatchingController {
 		this.frontendNameList = crewnameReader.initializeCrewNameList(Course.FRONTEND.getPath());
 	}
 
-	public void resetRecords () {
+	public void resetRecords() {
 		matchingRecords.reset();
 		outputView.printResetCompletedMessage();
 	}
 
-	public void retrieve () {
+	public void retrieve() {
 		outputView.printCoursesAndMissions();
 		try {
 			Matching matchingInfo = initializeMatchingInfo();
@@ -58,8 +58,8 @@ public class MatchingController {
 			Matching matchingInfo = initializeMatchingInfo();
 			List<String> crewNameList = getRandomCrewNameListByCourse(matchingInfo.getCourse());
 			if (matchingRecords.hasRecord(matchingInfo)) {
-			   rematch(matchingInfo, crewNameList);
-		}
+				rematch(matchingInfo, crewNameList);
+			}
 			Pairs pairs = createPairs(crewNameList);
 			outputView.printMatchingResult(pairs.findAll());
 			matchingRecords.add(matchingInfo, pairs);
@@ -68,15 +68,15 @@ public class MatchingController {
 		}
 	}
 
-	private void rematch (final Matching matchingInfo, final List<String> crewNameList) {
-	   String option = askRematchChoice();
-	   if (option.equals(YES)) {
-		   Pairs pairs = createPairs(crewNameList);
-		   outputView.printMatchingResult(pairs.findAll());
-		   matchingRecords.modifyRecord(matchingInfo, pairs);
-	   } else if (option.equals(NO)) {
-		   match();
-	   }
+	private void rematch(final Matching matchingInfo, final List<String> crewNameList) {
+		String option = askRematchChoice();
+		if (option.equals(YES)) {
+			Pairs pairs = createPairs(crewNameList);
+			outputView.printMatchingResult(pairs.findAll());
+			matchingRecords.modifyRecord(matchingInfo, pairs);
+		} else if (option.equals(NO)) {
+			match();
+		}
 	}
 
 	private String askRematchChoice() {

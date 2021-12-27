@@ -13,7 +13,7 @@ public class MatchingRecords {
 		matchingRecords.put(matching, pairs);
 	}
 
-	public Pairs findByMatchingInfo (final Matching matchingInfo) {
+	public Pairs findByMatchingInfo(final Matching matchingInfo) {
 		if (!matchingRecords.containsKey(matchingInfo)) {
 			throw new IllegalArgumentException(ERROR_NOT_EXISTENT_MATCHING);
 		}

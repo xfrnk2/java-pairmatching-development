@@ -14,7 +14,8 @@ public class PairMatching {
 	private static final OutputView outputView = new OutputView();
 	private static final InputView inputView = new InputView();
 	private static final CrewNameReader crewnameReader = new CrewNameReader();
-	private static final MatchingController matchingController = new MatchingController(inputView, outputView, crewnameReader);
+	private static final MatchingController matchingController
+		= new MatchingController(inputView, outputView, crewnameReader);
 
 	public void run() {
 		while (true) {
@@ -40,7 +41,6 @@ public class PairMatching {
 			matchingController.resetRecords();
 		}
 	}
-
 
 	private String askOptionChoice() {
 		List<MainCategory> mainCategoryList = Arrays.stream(MainCategory.values()).collect(Collectors.toList());
